@@ -4,5 +4,5 @@ id 'application'
 }
 
 application {
-mainClass.set('MyFirstProgram')
+mainClass = 'MyFirstProgram'
 }
