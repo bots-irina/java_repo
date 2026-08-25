@@ -1,4 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'application'
-mainClassName = "MyFirstProgram"
+plugins {
+id 'java'
+id 'application'
+}
 
+application {
+mainClass = 'MyFirstProgram'
+}
