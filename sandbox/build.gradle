@@ -6,3 +6,15 @@ id 'application'
 application {
 mainClass = 'MyFirstProgram'
 }
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.testng:testng:7.12.0")
+}
+
+test {
+    useTestNG()
+}
