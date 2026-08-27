@@ -4,16 +4,18 @@ public class Distance {
 
   public static void main(String[] args) {
 
-    double x1 = 1;
-    double y1 = 2;
+    Point p1 = new Point();
+    p1.x = 1;
+    p1.y = 2;
 
-    double x2 = 4;
-    double y2 = 6;
+    Point p2 = new Point();
+    p2.x = 4;
+    p2.y = 6;
 
-    System.out.println("Расстояние между точками c координатами " + "p1(" + x1 + ";" + y1 + ") " + "и " + "p2(" + x2 + ";" + y2 + ")" + " = " + distance(x1, x2, y1, y2));
+    System.out.println("Расстояние между точками c координатами " + "p1(" + p1.x + ";" + p1.y + ") " + "и " + "p2(" + p2.x + ";" + p2.y + ")" + " = " + distance(p1, p2));
   }
 
-  public static double distance(double x1, double x2, double y1, double y2) {
-    return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+  public static double distance(Point p1, Point p2) {
+    return Math.sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
   }
 }
