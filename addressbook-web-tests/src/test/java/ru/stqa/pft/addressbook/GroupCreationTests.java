@@ -16,10 +16,6 @@ public class GroupCreationTests {
     System.setProperty("webdriver.chrome.driver", "C:\\Windows\\System32\\chromedriver.exe");
     wd = new ChromeDriver();
     js = (JavascriptExecutor) wd;
-  }
-
-  @Test
-  public void testGroupCreation() throws Exception {
     wd.get("http://localhost/addressbook/");
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
@@ -28,11 +24,15 @@ public class GroupCreationTests {
     wd.findElement(By.name("pass")).clear();
     wd.findElement(By.name("pass")).sendKeys("secret");
     wd.findElement(By.xpath("//input[@value='Login']")).click();
-    WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(10));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("groups")));
+  }
+
+  @Test
+  public void testGroupCreation() throws Exception {
+    //WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(10));
+    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("groups")));
     wd.findElement(By.linkText("groups")).click();
     wd.findElement(By.name("new")).click();
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("group_name")));
+    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("group_name")));
     wd.findElement(By.name("group_name")).click();
     wd.findElement(By.name("group_name")).clear();
     wd.findElement(By.name("group_name")).sendKeys("test1");
@@ -43,7 +43,7 @@ public class GroupCreationTests {
     wd.findElement(By.name("group_footer")).clear();
     wd.findElement(By.name("group_footer")).sendKeys("test3");
     wd.findElement(By.name("submit")).click();
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("group page")));
+    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("group page")));
     wd.findElement(By.linkText("group page")).click();
     wd.findElement(By.linkText("Logout")).click();
   }
